@@ -7,3 +7,5 @@
 <p><a href="/Create">新增店家</a></p>
 
 <p><a href="/ShowAllData">使用者定義</a></p>
+
+<p><a href="/ShowAllData">使用者定義</a></p>
