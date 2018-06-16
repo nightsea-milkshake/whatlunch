@@ -39,9 +39,9 @@ class LunchController extends Controller
         return View('lunch.update');
     }
 
-    public function ShowAllData()
+    public function ShowAllData(Request $search)
     {
-        $data=$this->lunchService->GetAllDataList();
+        $data=$this->lunchService->GetAllDataList($search->search);
         return View('lunch.showdata',[
             'alldata'=>$data
             ]);

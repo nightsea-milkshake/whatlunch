@@ -12,9 +12,16 @@ class lunchService
         return $lunch;
     }
 
-    public function GetAllDataList()
+    public function GetAllDataList($search)
     {
-        $lunch=Lunch::all();
+        if(empty($search))
+        {
+            $lunch=Lunch::all();
+        }
+        else
+        {
+            $lunch=Lunch::where('StoreName','like','%'.$search.'%')->get();
+        }
         return $lunch;
     }
 
