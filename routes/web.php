@@ -20,3 +20,4 @@ Route::get('/RandomLunch', 'LunchController@RandomLunch');
 Route::get('/Create', 'LunchController@Create');
 Route::post('/Update', 'LunchController@Update');
 Route::get('/ShowAllData', 'LunchController@ShowAllData');
+Route::post('/PartRandom', 'LunchController@PartRandom');

@@ -46,4 +46,19 @@ class LunchController extends Controller
             'alldata'=>$data
             ]);
     }
+
+    public function PartRandom(Request $checkdata)
+    {
+        $data = new Lunch();
+        if(!isset($checkdata->checkdata))
+        {
+            $data=$this->lunchService->GetData();
+            return View('lunch.partrandom',['data'=>$data]);
+        }
+        else
+        {
+            $data->StoreName=$checkdata->checkdata[rand(0,count($checkdata->checkdata)-1)];
+            return View('lunch.partrandom',['data'=>$data,'checkdata'=>$checkdata->checkdata]);
+        }
+    }
 }

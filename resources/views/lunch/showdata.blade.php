@@ -16,15 +16,26 @@
     </table>
 </form>
 
-<table>
-    @foreach($alldata as $data)
+<form action="{{Url('PartRandom')}}" method="POST">
+    {{csrf_field()}}
+    <table>
+        @foreach($alldata as $data)
+            <tr>
+                <td>
+                    {{$data->StoreName}}
+                </td>
+                <td>
+                    <input type="checkbox" name="checkdata[]" value="{{$data->StoreName}}" checked>
+                </td>
+            </tr>
+        @endforeach
         <tr>
             <td>
-                {{$data->StoreName}}
+            <input type="submit" value="隨機產生">
             </td>
             <td>
-                <input type="checkbox" name="checkdata">
+            <a href="/index"><input type="button" value="回首頁"></a>
             </td>
         </tr>
-    @endforeach
-</table>
+    </table>
+</form>

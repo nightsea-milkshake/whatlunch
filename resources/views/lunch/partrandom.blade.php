@@ -1,6 +1,6 @@
 <h2>午餐吃啥</h2>
 
-<form action="/RandomLunch">
+<form action="/PartRandom" method="POST">
 {{csrf_field()}}
     <table>
         <tr>
@@ -19,4 +19,10 @@
             </td>
         </tr>
     </table>
+    @empty($checkdata)
+        @else
+            @foreach($checkdata as $checkdatabu)
+                <input type="hidden" name="checkdata[]" value="{{$checkdatabu}}">
+            @endforeach
+    @endempty
 </form>

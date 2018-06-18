@@ -8,6 +8,7 @@ class lunchService
 
     public function GetData()
     {
+
         $lunch=Lunch::inRandomOrder()->first();
         return $lunch;
     }
